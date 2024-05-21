@@ -38,25 +38,27 @@ body {
   background-color: #ffffff;
 }
 .container {
-  max-width: 290px;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 738px;
+    max-width: 768px;
   }
 }
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 /*-- ----------------------------- Header styles --------------------------- - */
 .menu,
-.address-menu {
+.page-address {
   display: none;
 }
 .page-header {
@@ -99,6 +101,9 @@ body {
   .page-nav {
     display: flex;
     align-items: center;
+  }
+  .logo {
+    margin-right: 120px;
   }
   .menu {
     display: flex;
@@ -144,7 +149,10 @@ body {
   .menu-link:focus {
     color: #404bbf;
   }
-  .address-menu {
+  .address-menu-item {
+    margin-bottom: 8px;
+  }
+  .page-address {
     display: block;
   }
   address {
@@ -169,6 +177,9 @@ body {
   .address-menu {
     display: flex;
     gap: 40px;
+  }
+  .address-menu-item {
+    margin-bottom: 0px;
   }
   .address-link {
     font-size: 16px;
@@ -317,11 +328,13 @@ body {
 }
 .list-our-benefits {
   display: block;
+  align-items: center;
 }
 .our-benefits-subtitle {
   margin-bottom: 8px;
   font-weight: 700;
   font-size: 36px;
+  text-align: center;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: #2e2f42;
@@ -332,9 +345,14 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+}
+.our-benefits-item {
+  align-items: center;
   margin-bottom: 72px;
 }
-
+.our-benefits-item:last-child {
+  margin-bottom: 0px;
+}
 @media screen and (min-width: 768px) {
   .list-our-benefits {
     display: flex;
@@ -343,8 +361,15 @@ body {
     column-gap: 24px;
     row-gap: 72px;
   }
+  .our-benefits-subtitle {
+    text-align: start;
+  }
   .our-benefits-item {
-    width: calc((100% - 48px) / 2);
+    margin-bottom: 0px;
+  }
+  .our-benefits-item {
+    margin-bottom: 0px;
+    width: calc((100% - 24px) / 2);
   }
 }
 
@@ -402,14 +427,18 @@ body {
 }
 
 .our-team-item {
+  max-width: 264px;
   margin-bottom: 72px;
   border-radius: 0px 0px 4px 4px;
   background-color: #ffffff;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
+.our-team-item:last-child {
+  margin-bottom: 0px;
+}
 .team-container-text {
-  padding: 32px 0;
+  padding: 28px 0;
 }
 .subtitle-our-team {
   text-align: center;
@@ -451,6 +480,7 @@ body {
   gap: 24px;
   margin-top: 8px;
 }
+
 .svg-team-item {
   width: 40px;
   height: 40px;
@@ -463,6 +493,8 @@ body {
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 64px;
+  }
+  .our-team-item {
     margin-bottom: 0;
   }
   .section-our-team {
@@ -501,6 +533,9 @@ body {
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-item:last-child {
+  margin-bottom: 0;
 }
 .portfolio-item:hover {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -562,6 +597,7 @@ body {
     flex-wrap: wrap;
   }
   .portfolio-item {
+    margin-bottom: 0px;
     width: calc((100% - 24px) / 2);
   }
 }
@@ -580,6 +616,7 @@ body {
 .footer-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   row-gap: 72px;
 }
@@ -593,11 +630,12 @@ body {
   color: #f4f4fd;
 }
 .page-footer {
-  padding: 96px 16px;
+  padding: 96px 0px;
   background: #2e2f42;
 }
 .logo-footer {
   display: inline-block;
+  text-align: center;
   margin-bottom: 16px;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -639,6 +677,7 @@ body {
 .social-media-title {
   font-weight: 500;
   font-size: 16px;
+  text-align: center;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #ffffff;
@@ -648,6 +687,7 @@ body {
 .footer-text-title {
   margin-bottom: 16px;
   font-weight: 500;
+  text-align: center;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -705,12 +745,19 @@ body {
 
 @media screen and (min-width: 768px) {
   .footer-container {
-    margin-left: 93px;
     display: flex;
     align-items: baseline;
+    padding: 0 108px;
+    justify-content: start;
   }
   .logo-p-footer {
     margin-right: 24px;
+  }
+  .footer-text-title {
+    text-align: start;
+  }
+  .social-media-title {
+    text-align: start;
   }
   .form-footer-email {
     display: flex;
@@ -725,7 +772,7 @@ body {
 }
 @media screen and (min-width: 1158px) {
   .footer-container {
-    margin-left: 0px;
+    padding: 0 15px;
   }
   .logo-p-footer {
     margin-right: 120px;
@@ -904,6 +951,13 @@ body {
   .checkbox-decoration {
   outline: 2px solid rgba(0, 0, 255, 0.5);
 }
+.label-user-contacts-checkbox {
+  display: flex;
+  align-items: center;
+}
+.span-link-checkbox {
+  flex-shrink: 0;
+}
 .checkbox-decoration {
   display: inline-flex;
   justify-content: center;
@@ -979,7 +1033,9 @@ body {
   padding: 72px 16px 40px 16px;
   position: relative;
   max-width: 320px;
-  max-height: 640px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .button-mobile-menu {
   display: flex;
@@ -1005,12 +1061,15 @@ body {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) visibility 250ms
     cubic-bezier(0.4, 0, 0.2, 1);
 }
+.nav-menu-list-mobile {
+  margin-bottom: auto;
+}
 .menu-list-mobile {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
-  margin-bottom: 168px;
 }
+
 .menu-link-mobile {
   display: block;
   font-weight: 700;
@@ -1026,11 +1085,13 @@ body {
   position: relative;
   color: #404bbf;
 }
+.page-address-mobile {
+  margin-bottom: 48px;
+}
 .address-menu-mobile {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-  margin-bottom: 48px;
 }
 .address-link-mobile {
   font-weight: 500;
@@ -1041,6 +1102,9 @@ body {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.list-start-team {
+  justify-content: start;
 }
 address {
   font-style: normal;
