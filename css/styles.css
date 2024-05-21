@@ -955,7 +955,7 @@ body {
   display: flex;
   align-items: center;
 }
-.span-link-checkbox {
+.checkbox-decoration {
   flex-shrink: 0;
 }
 .checkbox-decoration {
